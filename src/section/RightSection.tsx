@@ -1,13 +1,19 @@
 import styled from "styled-components";
+import SearchBar from "../components/SearchBar";
 
 export const RightSection = () => {
-  return <MainStyled className=""></MainStyled>;
+  return (
+    <MainStyled className="">
+      <SearchBar />
+    </MainStyled>
+  );
 };
 
 export default RightSection;
 
 const MainStyled = styled.div`
   display: flex;
+  position: relative;
   background-color: #eaeaea;
   width: 75%;
   height: 100%;
