@@ -4,7 +4,7 @@ import { MicroscopeIcon } from "./ui/MicroscopeIcon";
 
 const SearchBar = () => {
   return (
-    <div className="absolute top-4 left-4 bg-white dark:bg-gray-950 rounded-lg shadow p-3 space-y-2">
+    <div className="absolute top-4 left-4 bg-white dark:bg-gray-950 rounded-lg shadow p-3 space-y-2 z-10">
       <div className="flex items-center gap-2">
         <MicroscopeIcon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
         <Input className="w-48 border" placeholder="Rechercher" type="text" />
