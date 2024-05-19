@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import SearchBar from "../components/SearchBar";
 
-import plan from "../assets/planEnsim/svg/plan.svg";
+//import plan from "../assets/planEnsim/svg/plan.svg";
 import { useState } from "react";
+import ZoomInOut from "../components/commun/ZoomInOut";
 
 export const RightSection = () => {
   const [angle, setAngle] = useState(0);
@@ -13,6 +14,7 @@ export const RightSection = () => {
   return (
     <MainStyled className="">
       <SearchBar />
+      <ZoomInOut />
       {/*<div className="image__div">
         <img
           src={plan}
