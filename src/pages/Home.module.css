@@ -3,14 +3,15 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-image: url("../assets/images/ensim.jpg");
-  background-repeat: no-repeat; /* Ne pas répéter l'image */
-  background-size: cover;
+  background-color: #2fb0d4;
+  /*background-image: url("../assets/images/ensim.jpg");
+  background-repeat: no-repeat; /* Ne pas répéter l'image 
+  background-size: cover;*/
 }
 .container {
   display: flex;
   width: 90%;
   height: 95%;
   border-radius: 10px;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
 }

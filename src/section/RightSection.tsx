@@ -13,7 +13,7 @@ export const RightSection = () => {
   return (
     <MainStyled className="">
       <SearchBar />
-      <div className="image__div">
+      {/*<div className="image__div">
         <img
           src={plan}
           width={500}
@@ -21,9 +21,9 @@ export const RightSection = () => {
           alt="plan ensim"
           style={{ transform: `rotate(${angle}deg)`, position: "absolute" }}
         />
-      </div>
+      </div>*/}
 
-      <button onClick={rotate}>Rotate Image</button>
+      {/*<button onClick={rotate}>Rotate Image</button>*/}
       {/*<svg onClick={() => alert("salut")}>
         <circle id="positionPoint" cx="200" cy="500" r="12.5" fill="red" />
       </svg> 
