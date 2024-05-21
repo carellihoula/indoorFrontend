@@ -1,19 +1,28 @@
 import styled from "styled-components";
 import SearchBar from "../components/SearchBar";
 
-//import plan from "../assets/planEnsim/svg/plan.svg";
-import { useState } from "react";
+import plan from "../assets/planEnsim/svg/plan.svg";
+//import { useState } from "react";
 import ZoomInOut from "../components/commun/ZoomInOut";
+import SchoolMap from "../components/commun/SchoolMap";
 
 export const RightSection = () => {
-  const [angle, setAngle] = useState(0);
-
-  const rotate = () => {
+  //const [angle, setAngle] = useState(0);
+  //console.log(angle);
+  /*const rotate = () => {
     setAngle((prevAngle) => prevAngle + 90); // Rotate image by 90 degrees
-  };
+  };*/
   return (
     <MainStyled className="">
       <SearchBar />
+      <SchoolMap
+        imageUrl={plan}
+        bounds={[
+          [0, 0],
+          [800, 500],
+        ]} // Remplacez par les dimensions réelles de votre image
+      />
+
       <ZoomInOut />
       {/*<div className="image__div">
         <img
