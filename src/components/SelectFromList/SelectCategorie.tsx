@@ -26,7 +26,12 @@ export default function MultipleSelectPlaceholder() {
     <Container>
       <div className="input__div">
         <input type="text" value={value} onChange={handleChange} />
-        <IoIosArrowDown color="black" size={24} />
+        <IoIosArrowDown
+          color="black"
+          size={24}
+          onClick={() => alert("it works")}
+          style={{ cursor: "pointer" }}
+        />
       </div>
 
       <div className="list mt-2">
