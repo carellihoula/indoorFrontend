@@ -1,10 +1,16 @@
 import styled from "styled-components";
 import EnsimTitle from "../components/commun/EnsimTitle";
+import MultipleSelectPlaceholder from "../components/SelectFromList/SelectCategorie";
 
 const LeftSection = () => {
   return (
     <MainStyled>
       <EnsimTitle />
+      <h1 className="font-bold mt-4 text-xl">Filtres</h1>
+      <div>
+        <MultipleSelectPlaceholder />
+        <MultipleSelectPlaceholder />
+      </div>
     </MainStyled>
   );
 };
@@ -15,6 +21,7 @@ const MainStyled = styled.div`
   display: flex;
   flex-direction: column;
   background-color: white;
+
   padding: 10px;
   width: 25%;
   height: 100%;
