@@ -6,8 +6,9 @@ const LeftSection = () => {
   return (
     <MainStyled>
       <EnsimTitle />
-      <h1 className="font-bold mt-4 text-xl">Filtres</h1>
-      <div>
+
+      <div className="mt-20">
+        <h1 className="font-bold mb-2 text-xl">Filtres</h1>
         <MultipleSelectPlaceholder />
         <MultipleSelectPlaceholder />
       </div>
