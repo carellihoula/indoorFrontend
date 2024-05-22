@@ -77,7 +77,7 @@ const Container = styled.div`
     padding: 5px;
   }
   .list__item:hover {
-    background-color: grey;
+    background-color: #eaeaea;
     padding: 5px;
     cursor: pointer;
   }
