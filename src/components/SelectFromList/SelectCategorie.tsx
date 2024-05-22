@@ -71,7 +71,6 @@ const Container = styled.div`
   .list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     border-radius: 5px;
     width: 70%;
     border: 1px solid black;
@@ -80,6 +79,7 @@ const Container = styled.div`
   }
   .list__item {
     padding: 5px;
+    //background-color: red; ==> for debug
   }
   .list__item:hover {
     background-color: #eaeaea;
