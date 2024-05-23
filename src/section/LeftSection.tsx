@@ -9,7 +9,6 @@ const LeftSection = () => {
       <h1 className="font-bold mt-4 text-xl">Filtres</h1>
       <div>
         <MultipleSelectPlaceholder />
-        <MultipleSelectPlaceholder />
       </div>
     </MainStyled>
   );
