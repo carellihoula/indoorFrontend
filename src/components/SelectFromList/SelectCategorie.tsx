@@ -1,52 +1,80 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import styled from "styled-components";
 import { IoIosArrowDown } from "react-icons/io";
 
 export default function MultipleSelectPlaceholder() {
-  const [value, setValue] = useState("Choisir une Catégorie");
+  const [value, setValue] = useState("");
+  const [showItems, setShowItems] = useState<boolean>(false);
+
   const names = [
-    "Oliver Hansen",
-    "Van Henry",
-    "April Tucker",
-    "Ralph Hubbard",
-    "Omar Alexander",
-    "Carlos Abbott",
-    "Miriam Wagner",
-    "Bradley Wilkerson",
-    "Virginia Andrews",
-    "Kelly Snyder",
+    "Ordinateurs portables",
+    "Ordinateurs de bureau",
+    "Moniteurs",
+    "Claviers",
+    "Souris",
+    "Imprimantes",
+    "Scanners",
+    "Oscilloscopes",
+    " Multimètres",
+    "Générateurs de signaux",
+    " Stations de soudage",
+    "Plaques de prototypage",
+    "Kits de composants électroniques",
   ];
+
+  useEffect(() => {
+    if (value === "") {
+      setShowItems(false);
+    }
+  }, [value]);
+
   const selectitemHandler = (item: string) => {
     setValue(item);
   };
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
+    if (value !== "") {
+      setShowItems(true);
+    }
+  };
+  const showItemsHandler = () => {
+    setShowItems(!showItems);
   };
   return (
     <Container>
       <div className="input__div">
-        <input type="text" value={value} onChange={handleChange} />
+        <input
+          type="text"
+          value={value}
+          onChange={handleChange}
+          placeholder="Choisir une Catégorie"
+        />
         <IoIosArrowDown
           color="black"
           size={24}
-          onClick={() => alert("it works")}
+          onClick={showItemsHandler}
           style={{ cursor: "pointer" }}
         />
       </div>
-
-      <div className="list mt-2">
-        {names.map((a, index) => {
-          return (
-            <div
-              key={index}
-              className="list__item"
-              onClick={() => selectitemHandler(a)}
-            >
-              {a}
-            </div>
-          );
-        })}
-      </div>
+      {showItems && (
+        <div className="list mt-2">
+          {names
+            .filter((item) =>
+              value ? item.toLowerCase().includes(value.toLowerCase()) : true
+            )
+            .map((a, index) => {
+              return (
+                <div
+                  key={index}
+                  className="list__item"
+                  onClick={() => selectitemHandler(a)}
+                >
+                  {a}
+                </div>
+              );
+            })}
+        </div>
+      )}
     </Container>
   );
 }
@@ -71,9 +99,11 @@ const Container = styled.div`
   .list {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
     border-radius: 5px;
     width: 70%;
     border: 1px solid black;
+    min-height: 100px;
     max-height: 200px;
     overflow-y: auto;
   }
